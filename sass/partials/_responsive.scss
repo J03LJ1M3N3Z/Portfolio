@@ -1,0 +1,65 @@
+/*--------------RESPONSIVE----------*/
+
+/* extra Small Devices*/
+
+@mixin movil0{
+    @media only screen and (min-width: 0px){
+        @content;
+    }
+    
+}
+
+/*Small Devices*/
+
+@mixin movil575{
+    @media only screen and (min-width: 575px){
+        @content;
+    }
+}
+
+@mixin movil600{ /*  Responsive para secciion de Sesiones*/
+    @media (min-width: 600px){
+        @content;
+    }
+}
+
+/*Medium devices*/
+
+@mixin movil767{
+    @media only screen and (min-width: 767px){
+        @content;
+    }
+}
+
+@mixin movil768{
+    @media only screen and (min-width: 768px){
+        @content;
+    }
+}
+
+/*Large Devices*/
+
+
+@mixin movil991{
+    @media only screen and (min-width:991px){
+        @content;
+    }       
+}
+
+@mixin movil1200{
+    @media only screen and (min-width:1200px){
+        @content;
+    }       
+}
+
+@mixin movil1400{
+    @media only screen and (min-width:1400px){
+        @content;
+    }       
+}
+
+@mixin movil2500{
+    @media only screen and (min-width:2500px){
+        @content;
+    }       
+}

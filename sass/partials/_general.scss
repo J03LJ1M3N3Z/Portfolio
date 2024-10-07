@@ -1,0 +1,273 @@
+/* Resets */
+
+::selection {
+    background-color: #B8E439;
+    color: $blue-strong;
+}
+
+/*scroll bar*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: $black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba($white, $alpha: .2);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.img-fluid {
+    width: 100%;
+}
+
+.noPadding {
+    padding: 0;
+}
+
+.row {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.row.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.row.no-gutters>[class^='col-'],
+.row.no-gutters>[class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+section.noPadding {
+    padding: 0em 0;
+}
+
+/* Fonts */
+/* Fonts */
+body,
+input,
+textarea,
+select {
+    font-family: 'San Diego';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-display: swap;
+    margin-bottom: .5rem;
+}
+
+h1 {
+    font-size: clamp(2rem, 1.8rem + 1vw, 3rem);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 1.4rem + 0.5vw, 2rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 1.4rem + 0.5vw, 2rem);
+}
+
+p,
+li,
+label {
+    font-size: clamp(0.9rem, 0.86rem + 0.2vw, 1.1rem);
+    letter-spacing: .05rem;
+    margin-bottom: .5rem;
+}
+
+.smallTxt {
+    font-size: 0.7em;
+    text-align: center;
+}
+
+/* links */
+a {
+    color: #F73939;
+    text-decoration: underline;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #FE4912;
+}
+
+.cta {
+    display: inline-block;
+    max-width: 150px;
+    width: 100%;
+    background-color: #B8E439;
+    color: $black;
+    text-align: center;
+    padding: .5rem;
+    border-radius: 2rem;
+    transition: .3s;
+
+    &:hover {
+        background-color: $black;
+        color: $white;
+        max-width: 200px;
+        transition: .3s;
+    }
+}
+
+
+
+/* Buttons */
+.btn {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    padding: 0.8em 1.3em !important;
+    text-decoration: none;
+    transition: color 0.4s, border 0.3s;
+    position: relative;
+    transition: color 0.3s, background-color 0.3s;
+    text-transform: none !important;
+    -webkit-border-radius: 0.4em;
+    -ms-border-radius: 0.4em;
+    -o-border-radius: 0.4em;
+    border-radius: 0.4em;
+}
+
+// Page
+body {
+    background-color: $black;
+    overflow-x: hidden;
+}
+
+#content{
+    position: relative;
+}
+
+
+.blob {
+    width: clamp(9rem, 7.2rem + 9vw, 18rem);
+    height: clamp(9rem, 7.2rem + 9vw, 18rem);
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(20px);
+    animation: blob 20s linear infinite forwards;
+}
+
+
+#blob-1 {
+    top: 10%;
+    left: 10%;
+    background: linear-gradient(to bottom, #00ffeac4, #d3321d00);
+}
+
+#blob-2 {
+    top: 45%;
+    right: 20%;
+    background: linear-gradient(to bottom, #1332FE, #4d67c506);
+}
+
+#blob-3 {
+    top: 75%;
+    left: 18%;
+    background: linear-gradient(to bottom, #2EFE13, #6aac7824);
+}
+
+
+#blob-4 {
+    top: 120%;
+    right: 18%;
+    background: linear-gradient(to bottom, #E426E4, #e426e403);
+}
+
+#blob-5 {
+    top: 160%;
+    left: 14%;
+    background: linear-gradient(to bottom, #fe6913, #fe691317);
+}
+
+#blob-6 {
+    top: 200%;
+    right: 20%;
+    background: linear-gradient(to bottom, #d1e426, #d1e42602);
+}
+
+@keyframes blob {
+    0% {
+        transform: scalex(1.5) scaley(1.2) rotate(0deg);
+    }
+
+    50% {
+        transform: scaley(1.5) scalex(1.2) rotate(360deg);
+    }
+
+    100% {
+        transform: scalex(1.5) scaley(1.2) rotate(480deg);
+    }
+}
+
+/*Loading*/
+
+/* common */
+#loader-wrap{
+    width: 100%;
+    height: 100dvh;
+    background-color: $black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: flex;
+}
+
+.loading {
+    font-weight: 600;
+    text-align: center;
+
+    span {
+        display: inline-block;
+        margin: 0 -.05em;
+        font-size: clamp(0.9rem, 0.88rem + 0.1vw, 1rem);
+    }
+}
+
+.loading02 {
+    span {
+        animation: loading02 1.2s infinite alternate;
+
+        @for $i from 1 through 11 {
+            &:nth-child(#{$i+1}) {
+                animation-delay: #{$i*.2}s;
+            }
+        }
+    }
+}
+
+@keyframes loading02 {
+    0% {
+        filter: blur(0);
+        opacity: 1;
+    }
+
+    100% {
+        filter: blur(5px);
+        opacity: .2;
+    }
+}
