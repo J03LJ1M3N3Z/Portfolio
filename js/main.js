@@ -1,3 +1,4 @@
+//Cambiar de preferncia del tema dark y light
 document.addEventListener("DOMContentLoaded", function () {
   const lightModeButton = document.querySelector("button.mode:nth-child(1)");
   const darkModeButton = document.querySelector("button.mode:nth-child(2)");
@@ -59,6 +60,7 @@ $(document).ready(function () {
 });
 
 
+//ALTERNAR ENTRE TABS DE PROYECTOS
 $(function () {
     $(".group-projects a").click(function () {
       var tabId = $(this).attr("data-tab");
@@ -70,3 +72,14 @@ $(function () {
       $("#" + tabId).addClass("active");
     });
   });
+
+  //AGREGAR CLASE AL HEADER AL HACER SCROLL
+  jQuery(window).scroll(function() {    
+    var scroll = jQuery(window).scrollTop();
+
+    if (scroll >= 50) {
+        jQuery("#header").addClass("fixed");
+    } else {
+        jQuery("#header").removeClass("fixed");
+    }
+});
